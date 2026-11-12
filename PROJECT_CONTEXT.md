@@ -1,7 +1,7 @@
-# 🌾 SONA AI: Comprehensive Project Context & Master Specification
+# 🌾 ZARKHEZ AI: Comprehensive Project Context & Master Specification
 
-> **Autonomous Voice-First Agri-Fintech Agent & Fulfillment Pipeline**  
-> *Powered by fastn MCP, Multimodal Intelligence, and Conversational BNPL*
+> **Autonomous Voice-First Agri-Fintech Agent & Quantum Agro-Scheduler**  
+> *Powered by Qiskit Quantum Optimization, fastn MCP, Multimodal Intelligence, and Conversational BNPL*
 
 ---
 

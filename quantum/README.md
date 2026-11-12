@@ -1,4 +1,4 @@
-# ⚛️ Zarkez AI: Quantum Agro-Scheduler
+# ⚛️ Zarkhez AI: Quantum Agro-Scheduler
 > **Qiskit Fall Fest 2026 Hackathon Submission**  
 > **Domain 4: Agriculture**  
 > *Quantum Optimization for Multi-Field Nitrogen Resource Allocation under Climate Leaching Hazards and Operational Machinery Bottlenecks*
@@ -33,7 +33,7 @@ We formulate this real-world dilemma as a **Quadratic Unconstrained Binary Optim
 ## 🏗️ System Architecture
 ![Architecture Diagram](architecture_diagram.png)
 
-Zarkez AI seamlessly integrates Qiskit as an optimization engine inside a hybrid quantum-classical pipeline:
+Zarkhez AI seamlessly integrates Qiskit as an optimization engine inside a hybrid quantum-classical pipeline:
 1. **Farmer Input:** Farmer or cooperative submits field plots and regional location in native colloquial Urdu voice or web UI.
 2. **FastMCP Orchestrator:** Pulls live satellite weather telemetry (precipitation probability) from Open-Meteo, calculates biological crop urgency, and builds the QUBO matrix.
 3. **Qiskit Quantum Solver:** Solves the Ising Hamiltonian via QAOA on simulated qubits.
@@ -61,7 +61,7 @@ pip install -r quantum/requirements.txt
 
 ### 3. Run the Quantum Optimization Benchmark
 ```bash
-python quantum/sona_quantum_optimizer.py
+python quantum/zarkhez_quantum_optimizer.py
 ```
 
 Output:
@@ -73,13 +73,13 @@ Output:
 
 ## 📄 Hackathon Deliverables Included in this Repo
 
-1. **Working Qiskit Code:** [`quantum/sona_quantum_optimizer.py`](sona_quantum_optimizer.py)
-2. **Official Submission Report:** [`quantum/Sona_AI_Qiskit_Hackathon_Report.docx`](Sona_AI_Qiskit_Hackathon_Report.docx)
+1. **Working Qiskit Code:** [`quantum/zarkhez_quantum_optimizer.py`](zarkhez_quantum_optimizer.py)
+2. **Official Submission Report:** [`quantum/Zarkhez_AI_Qiskit_Hackathon_Report.docx`](Zarkhez_AI_Qiskit_Hackathon_Report.docx)
 3. **Architecture Diagram:** [`quantum/architecture_diagram.png`](architecture_diagram.png)
 4. **Benchmark Visuals:** [`quantum/quantum_schedule_benchmark.png`](quantum_schedule_benchmark.png)
 
 ---
 
 ## ⚖️ Honest Limitations & Reflection
-- **Classical vs. Simulator Overhead:** For 8 qubits ($2^8 = 256$ states), the classical eigensolver completes in 21.6 ms, whereas classical simulation of quantum circuits takes 45.2 s. True quantum speedup is asymptotic and will emerge when scaling to cooperative networks of 100+ fields ($2^{100}$ states).
-- **Physical NISQ Noise:** On actual quantum hardware (e.g. IBM Eagle), gate errors and decoherence require quantum error mitigation (ZNE) to sustain high approximation ratios.
+- **Classical vs. Simulator Overhead:** For small instances (8 qubits, $2^8 = 256$ states), the classical eigensolver completes in 21.6 ms, whereas classical simulation of quantum circuits takes 45.2 s due to repeated statevector tensor contractions. Quantum speedup does not exist at 8 qubits; whether QAOA achieves scalable quantum advantage for large combinatorial optimization remains an open research question.
+- **Physical NISQ Noise:** On actual quantum hardware (e.g. IBM Eagle/Heron), gate errors and decoherence degrade solution fidelity, requiring quantum error mitigation (ZNE) and dynamical decoupling.

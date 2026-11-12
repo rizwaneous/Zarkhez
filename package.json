@@ -1,7 +1,7 @@
 {
-  "name": "zarkez-ai",
+  "name": "zarkhez-ai",
   "version": "1.0.0",
-  "description": "Zarkez AI - Autonomous Multi-Agent Agricultural Intelligence Platform",
+  "description": "Zarkhez AI - Autonomous Multi-Agent Agricultural Intelligence Platform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

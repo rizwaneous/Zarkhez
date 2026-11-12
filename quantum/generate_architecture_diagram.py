@@ -14,7 +14,7 @@ ax.set_ylim(0, 100)
 ax.axis("off")
 
 # Title
-ax.text(50, 95, "ZARKEZ AI: HYBRID QUANTUM-CLASSICAL AGRI-OPTIMIZATION ARCHITECTURE",
+ax.text(50, 95, "ZARKHEZ AI: HYBRID QUANTUM-CLASSICAL AGRI-OPTIMIZATION ARCHITECTURE",
         ha="center", va="center", fontsize=15, fontweight="bold", color="#1a365d")
 ax.text(50, 91, "Multi-Field Resource & Fertilizer Scheduling under Climate Risk (Domain 4: Agriculture)",
         ha="center", va="center", fontsize=11, fontstyle="italic", color="#4a5568")
@@ -36,7 +36,7 @@ ax.add_patch(box2)
 ax.text(50, 80, "FastMCP AGENT ORCHESTRATOR", ha="center", va="center", fontsize=10, fontweight="bold", color="#2f855a")
 ax.text(50, 73, "• Open-Meteo Satellite Rain Prob", ha="center", va="center", fontsize=9, color="#2d3748")
 ax.text(50, 67, "• Nitrogen Leaching Hazard Model", ha="center", va="center", fontsize=9, color="#2d3748")
-ax.text(50, 61, "• Zarkez Agronomy Dosage Engine", ha="center", va="center", fontsize=9, color="#2d3748")
+ax.text(50, 61, "• Zarkhez Agronomy Dosage Engine", ha="center", va="center", fontsize=9, color="#2d3748")
 ax.text(50, 55, "• QUBO Matrix Mathematical Builder", ha="center", va="center", fontsize=9, color="#2d3748")
 
 # 3. Qiskit Quantum Engine (Center-Bottom)
@@ -80,7 +80,7 @@ ax.annotate("", xy=(70, 68), xytext=(63, 68), arrowprops=arrow_kw)
 ax.text(66.5, 71, "Execute", ha="center", fontsize=8, fontweight="bold", color="#4a5568")
 
 # Footer
-ax.text(50, 2, "Qiskit Fall Fest 2026 Hackathon | Domain 4: Agriculture | Team Zarkez AI",
+ax.text(50, 2, "Qiskit Fall Fest 2026 Hackathon | Domain 4: Agriculture | Team Zarkhez AI",
         ha="center", va="center", fontsize=9, color="#718096")
 
 output_file = os.path.join(os.path.dirname(__file__), "architecture_diagram.png")

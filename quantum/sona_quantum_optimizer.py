@@ -1,5 +1,5 @@
 """
-🌾 ZARKEZ AI - QUANTUM AGRO-SCHEDULER ENGINE
+🌾 ZARKHEZ AI - QUANTUM AGRO-SCHEDULER ENGINE
 =============================================================================
 Quantum Optimization for Multi-Field Fertilizer & Irrigation Scheduling
 under Climate Leaching Hazards and Operational Machinery Bottlenecks.
@@ -93,7 +93,7 @@ def var_name(plot_idx, day_idx):
 # -----------------------------------------------------------------------------
 # 2. MATHEMATICAL QUBO FORMULATION
 # -----------------------------------------------------------------------------
-def build_agricultural_qubo(penalty_weight=40.0):
+def build_agricultural_qubo(penalty_weight=50.0):
     """
     Builds the QuadraticProgram representing the multi-objective optimization:
       min  Objective(x) + Penalty(x)
@@ -114,7 +114,7 @@ def build_agricultural_qubo(penalty_weight=40.0):
        Tractor / equipment limit is 2 plots per day:
        sum_{i} x_i,t <= 2
     """
-    qp = QuadraticProgram(name="Zarkez_Quantum_Agro_Schedule")
+    qp = QuadraticProgram(name="Zarkhez_Quantum_Agro_Schedule")
 
     # Add 8 binary variables (representing 8 Qubits)
     for p in range(NUM_PLOTS):
@@ -209,7 +209,6 @@ def interpret_solution(bitstring_array, qp):
     
     for val, name in zip(bitstring_array, var_names):
         if val > 0.5:
-            # Format: x_p{plot}_d{day}
             parts = name.split("_")
             p_id = int(parts[1].replace("p", ""))
             d_id = int(parts[2].replace("d", ""))
@@ -261,7 +260,7 @@ def generate_benchmark_chart(results_summary, output_path="quantum_schedule_benc
                      f"{yval:.1f} ms", ha='center', va='bottom',
                      fontweight='bold', fontsize=10)
 
-    plt.suptitle("Zarkez AI: Quantum QAOA vs. Classical Exact Benchmark (Qiskit Fall Fest 2026)", fontsize=13, fontweight="bold")
+    plt.suptitle("Zarkhez AI: Quantum QAOA vs. Classical Exact Benchmark (Qiskit Fall Fest 2026)", fontsize=13, fontweight="bold")
     plt.tight_layout()
     plt.savefig(output_path)
     print(f"📊 Benchmark chart saved to: {output_path}", flush=True)
@@ -272,7 +271,7 @@ def generate_benchmark_chart(results_summary, output_path="quantum_schedule_benc
 # -----------------------------------------------------------------------------
 def run_quantum_agro_scheduler():
     print("=" * 78, flush=True)
-    print("🌾 ZARKEZ AI: QUANTUM AGRO-SCHEDULER BENCHMARK", flush=True)
+    print("🌾 ZARKHEZ AI: QUANTUM AGRO-SCHEDULER BENCHMARK", flush=True)
     print("   Problem: Multi-Field Fertilizer & Irrigation Resource Scheduling", flush=True)
     print("   Domain:  Agriculture (Domain 4) | 4 Plots × 2 Days = 8 Qubits", flush=True)
     print("=" * 78, flush=True)

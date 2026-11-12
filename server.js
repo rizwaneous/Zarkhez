@@ -37,9 +37,9 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Zarkez AI Agent System Prompt (Autonomous Agronomy & FasalPay Advisory + Ground-Truth Weather)
-const ZARKEZ_KNOWLEDGE_SYSTEM_PROMPT = `
-آپ "زرخیز AI" (Zarkez AI Agent) ہیں - ایک جدید ترین خودمختار زرعی اور موسمیاتی رہنماء اور فیصلہ ساز ایجنٹ۔
+// Zarkhez AI Agent System Prompt (Autonomous Agronomy & FasalPay Advisory + Ground-Truth Weather)
+const ZARKHEZ_KNOWLEDGE_SYSTEM_PROMPT = `
+آپ "زرخیز AI" (Zarkhez AI Agent) ہیں - ایک جدید ترین خودمختار زرعی اور موسمیاتی رہنماء اور فیصلہ ساز ایجنٹ۔
 
 **سخت ترین لازمی اصول - مختصر اور ٹو دی پوائنٹ جواب (STRICT BREVITY - MAX 50-70 WORDS):**
 1. **مختصر ترین جواب:** آپ کا پورا جواب لازمی طور پر انتہائی مختصر، جامع اور زیادہ سے زیادہ 3 سے 4 مختصر جملوں (تقریباً 50 سے 70 الفاظ) پر مشتمل ہونا چاہیے۔ لمبی تقریریں، فضول کہانیاں، اور غیر ضروری لسٹیں بالکل ممنوع ہیں!
@@ -52,8 +52,9 @@ const ZARKEZ_KNOWLEDGE_SYSTEM_PROMPT = `
 4. **زرعی پروڈکٹس:** کین گوارا (CAN)، نائٹروفاس (NP)، یوریا، اور فصل پے فنانسنگ (BNPL - 0% مارک اپ)۔
 5. گرامر: آپ خود خاتون ہیں ("میں بتاتی ہوں")، کسان مرد ہے ("آپ کیا پوچھنا چاہتے ہیں")۔
 `;
-const SONA_KNOWLEDGE_SYSTEM_PROMPT = ZARKEZ_KNOWLEDGE_SYSTEM_PROMPT;
-const SARSABZ_KNOWLEDGE_SYSTEM_PROMPT = ZARKEZ_KNOWLEDGE_SYSTEM_PROMPT;
+const ZARKEZ_KNOWLEDGE_SYSTEM_PROMPT = ZARKHEZ_KNOWLEDGE_SYSTEM_PROMPT;
+const SONA_KNOWLEDGE_SYSTEM_PROMPT = ZARKHEZ_KNOWLEDGE_SYSTEM_PROMPT;
+const SARSABZ_KNOWLEDGE_SYSTEM_PROMPT = ZARKHEZ_KNOWLEDGE_SYSTEM_PROMPT;
 
 // Master Urdu Word Units (1 to 99)
 const URDU_UNITS_MAP = [
@@ -1316,7 +1317,10 @@ app.get('/api/quantum-schedule', async (req, res) => {
   try {
     const { exec } = require('child_process');
     const pythonPath = path.join(__dirname, '.venv', 'Scripts', 'python.exe');
-    const scriptPath = path.join(__dirname, 'quantum', 'sona_quantum_optimizer.py');
+    let scriptPath = path.join(__dirname, 'quantum', 'zarkhez_quantum_optimizer.py');
+    if (!fs.existsSync(scriptPath)) {
+      scriptPath = path.join(__dirname, 'quantum', 'zarkez_quantum_optimizer.py');
+    }
 
     // If python .venv exists, execute live Qiskit solver, else return cached benchmark payload
     if (fs.existsSync(pythonPath) && fs.existsSync(scriptPath)) {
@@ -1376,13 +1380,13 @@ app.get('/', (req, res) => {
 
 // Health Check
 app.get('/healthz', (req, res) => {
-  res.status(200).send('Zarkez AI & FasalPay Backend is Healthy');
+  res.status(200).send('Zarkhez AI & FasalPay Backend is Healthy');
 });
 
 // Start Server
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`====================================================`);
-  console.log(`🌾 Zarkez AI Agent & FasalPay Server Running on Port ${PORT}`);
+  console.log(`🌾 Zarkhez AI Agent & FasalPay Server Running on Port ${PORT}`);
   console.log(`🌐 Open Main UI: http://localhost:${PORT}`);
   console.log(`📋 Open Admin Orders Portal: http://localhost:${PORT}/orders`);
   console.log(`====================================================`);
