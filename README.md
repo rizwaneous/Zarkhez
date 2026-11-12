@@ -1,6 +1,6 @@
-SONA AI - 
+Zarkhez AI
 
-**SONA** is an industry-level Proof of Concept (POC) designed for farmers of Pakistan. It empowers Pakistani farmers (*Kashtkars*) to ask questions about FFC fertilizers (Sona Urea, Sona DAP, Sona Boron DAP, FFC SOP, FFC MOP, Sona Zinc) and crop management by typing or speaking in **Urdu**.
+**Zarkhez** is an industry-level Proof of Concept (POC) designed for farmers of Pakistan. It empowers Pakistani farmers (*Kashtkars*) to ask questions about FFC fertilizers (Sona Urea, Sona DAP, Sona Boron DAP, FFC SOP, FFC MOP, Sona Zinc) and crop management by typing or speaking in **Urdu**.
 
 The assistant responds with authoritative Urdu agricultural guidance and an instant natural audio voice message from **Sawera** (سیویرا).
 
